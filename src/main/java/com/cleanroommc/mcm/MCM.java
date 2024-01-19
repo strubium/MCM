@@ -5,7 +5,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 
-@Mod(modid = ModRef.MODID, name = ModRef.NAME, ModRef = Constants.VERSION)
+@Mod(modid = ModRef.MODID, name = ModRef.NAME, version = ModRef.VERSION)
 public class MCM {
 
     @EventHandler
