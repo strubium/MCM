@@ -1,8 +1,7 @@
 package com.cleanroommc.mcm;
 
-
 /**
- * This class defines constants for MWC.
+ * This class defines constants for MCM.
  * <p>
  * ID and VERSION are automatically updated by RFG.
  */
