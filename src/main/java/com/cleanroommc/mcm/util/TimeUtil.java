@@ -33,8 +33,16 @@ public final class TimeUtil {
         return (int) (TICKS_PER_SECOND * seconds);
     }
 
+    public static int secondsFromTicks(int ticks) {
+        return (int) (ticks / TICKS_PER_SECOND);
+    }
+
     public static int ticksFromMinutes(float minutes) {
         return (int) (TICKS_PER_SECOND * 60 * minutes);
+    }
+
+    public static int minutesFromTicks(int ticks) {
+        return (int) (ticks / (60 * 60));
     }
 
     public static int ticksFromHours(float hours) {

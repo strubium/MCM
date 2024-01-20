@@ -24,9 +24,6 @@ import java.util.Map;
 
 import javax.annotation.Nonnull;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.google.common.collect.Maps;
 
 import net.minecraft.nbt.NBTTagCompound;
