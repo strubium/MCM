@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-import static com.cleanroommc.mcm.ModRef.ID;
+import static com.cleanroommc.mcm.ModRef.MODID;
 import static com.cleanroommc.mcm.ModRef.NAME;
 import static com.cleanroommc.mcm.ModRef.VERSION;
 

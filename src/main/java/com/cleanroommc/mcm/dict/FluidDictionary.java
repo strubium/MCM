@@ -1,3 +1,21 @@
+/*
+ * Source: HammerLib -- FluidDictionary
+ * Copyright (C) 2024 Zeitheron
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation version 3
+ * of the License.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.cleanroommc.mcm.dict;
 
 import java.util.ArrayList;
@@ -19,9 +37,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.eventhandler.Event;
 
+import static com.cleanroommc.mcm.ModRef.LOG;
+
 public class FluidDictionary
 {
-	public static final Logger log = LogManager.getLogger("Fluid Dictionary");
 	private static boolean hasInit = false;
 	
 	private static final Map<String, List<String>> idToFn = Maps.newHashMapWithExpectedSize(96);
@@ -57,7 +76,7 @@ public class FluidDictionary
 	{
 		if(isEmpty(fluid))
 		{
-			log.warn("Invalid registration attempt for a Fluid Dictionary fluid with name %s has occurred. The registration has been denied to prevent crashes. The mod responsible for the registration needs to correct this.", fname);
+			LOG.warn("Invalid registration attempt for a Fluid Dictionary fluid with name %s has occurred. The registration has been denied to prevent crashes. The mod responsible for the registration needs to correct this.", fname);
 			return;
 		}
 		
