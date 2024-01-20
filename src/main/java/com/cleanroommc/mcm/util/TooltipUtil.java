@@ -53,27 +53,25 @@ public class TooltipUtil
                 {
                     if(l.contains("parse[") && l.substring(l.indexOf("parse[")).contains("]"))
                     {
-                        String sput = "";
+                        StringBuilder sput = new StringBuilder();
                         String toEat = l;
                         int size = 0;
                         while(toEat.contains("parse[") && toEat.substring(toEat.indexOf("parse[")).contains("]"))
                         {
                             int parseStart = toEat.indexOf("parse[");
-                            sput += toEat.substring(0, parseStart);
+                            sput.append(toEat.substring(0, parseStart));
                             String fullExpr = toEat.substring(parseStart);
                             fullExpr = fullExpr.substring(0, fullExpr.indexOf("]") + 1);
                             String expr = fullExpr.substring(6, fullExpr.length() - 1);
 
-                            if(results.containsKey(expr))
-                            {
-                                sput += results.get(expr);
-                            } else
-                            {
-                                try
-                                {
+                            if(results.containsKey(expr)) {
+                                sput.append(results.get(expr));
+                            }
+                            else {
+                                try {
 
-                                } catch(Throwable err)
-                                {
+                                }
+                                catch(Throwable err) {
                                     l = l.replaceAll(fullExpr, "ERROR: " + expr);
                                 }
                             }
@@ -82,10 +80,9 @@ public class TooltipUtil
                             size += s;
                             toEat = toEat.substring(s);
                         }
-                        l = sput;
+                        l = sput.toString();
                     }
-                } catch(Throwable err)
-                {
+                } catch(Throwable err) {
                 }
 
                 tooltip.add(l);

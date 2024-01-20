@@ -19,6 +19,9 @@
 package com.cleanroommc.mcm.util;
 
 public final class TimeUtil {
+    /*
+     * TODO get the servers tps, instead of using a static variable
+     */
     public static final int TICKS_PER_SECOND = 20;
     public static final int VANILLA_DAY_LENGTH = 24000;
 
