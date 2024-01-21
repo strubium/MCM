@@ -36,6 +36,7 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 
 import static com.cleanroommc.mcm.ModRef.LOG;
 
+@SuppressWarnings("unused")
 public class FluidDictionary
 {
 	private static boolean hasInit = false;
@@ -73,7 +74,7 @@ public class FluidDictionary
 	{
 		if(isEmpty(fluid))
 		{
-			LOG.warn("Invalid registration attempt for a Fluid Dictionary fluid with name %s has occurred. The registration has been denied to prevent crashes. The mod responsible for the registration needs to correct this.", fname);
+			LOG.warn("Invalid registration attempt for a Fluid Dictionary fluid with name %s has occurred. The registration has been denied to prevent crashes. The mod responsible for the registration needs to correct this.");
 			return;
 		}
 		
@@ -88,10 +89,7 @@ public class FluidDictionary
 	
 	public static List<String> getNamesByFluidId(String id)
 	{
-		List<String> l = idToFn.get(id);
-		if(l == null)
-			idToFn.put(id, l = new ArrayList<String>());
-		return l;
+		return idToFn.computeIfAbsent(id, k -> new ArrayList<>());
 	}
 	
 	public static NonNullList<FluidStack> getFluidsByName(String fname)

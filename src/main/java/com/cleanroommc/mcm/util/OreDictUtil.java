@@ -28,9 +28,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-import static net.minecraftforge.oredict.OreDictionary.registerOre;
 import static com.cleanroommc.mcm.ModRef.LOG;
 
+@SuppressWarnings("unused")
 public final class OreDictUtil {
 
     // Variant Arrays
@@ -365,11 +365,11 @@ public final class OreDictUtil {
     /**
      * Utility classes, such as this one, are not meant to be instantiated. Java adds an
      * implicit public constructor to every class which does not define at lease one
-     * explicitly. Hence why this constructor was added.
+     * explicitly. Hence, why this constructor was added.
      */
     private OreDictUtil() {
 
-        throw new IllegalAccessError("Utility class");
+        throw new IllegalAccessError("OreDictUtil is a utility class!");
     }
 
     public static void initAdditionalVanillaEntries () {
@@ -472,7 +472,7 @@ public final class OreDictUtil {
     }
 
     /**
-     * Gets all of the ore dictionary names for an ItemStack.
+     * Gets all the ore dictionary names for an ItemStack.
      *
      * @param stack The ItemStack to look at.
      * @return A set of the ore names.

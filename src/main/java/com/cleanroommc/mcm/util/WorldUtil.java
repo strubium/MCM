@@ -35,6 +35,7 @@ import net.minecraftforge.fml.common.eventhandler.Event.Result;
 
 import static com.cleanroommc.mcm.ModRef.LOG;
 
+@SuppressWarnings("unused")
 public final class WorldUtil {
 
     /**
@@ -44,7 +45,7 @@ public final class WorldUtil {
      */
     private WorldUtil() {
 
-        throw new IllegalAccessError("Utility class");
+        throw new IllegalAccessError("WorldUtil is a utility class!");
     }
 
     /**

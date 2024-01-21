@@ -8,8 +8,8 @@
 package com.cleanroommc.mcm.util;
 
 import java.awt.Color;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import java.math.*;
+import java.util.Random;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -18,6 +18,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 
+@SuppressWarnings("unused")
 public final class MathUtil {
 
     /**
@@ -27,7 +28,7 @@ public final class MathUtil {
      */
     private MathUtil() {
 
-        throw new IllegalAccessError("Utility class");
+        throw new IllegalAccessError("MathUtil is a utility class!");
     }
 
     /**
@@ -115,12 +116,13 @@ public final class MathUtil {
      * Generates a random color as an integer, from Color and three random floats.
      *
      * @return int: An integer based representation of a Color.
-     TODO fix this
-    public static int getRandomColor () {
-
-        return new Color(Constants.RANDOM.nextFloat(), Constants.RANDOM.nextFloat(), Constants.RANDOM.nextFloat()).getRGB();
-    }
      */
+    public static int getRandomColor () {
+        Random r = new Random();
+
+        return new Color(r.nextFloat(), r.nextFloat(), r.nextFloat()).getRGB();
+    }
+
 
     /**
      * Gets the middle integer between two other integers. The order is not important.
@@ -187,6 +189,6 @@ public final class MathUtil {
      */
     public static int adjustToRange (int initial, int min, int max) {
 
-        return initial < min ? min : initial > max ? max : initial;
+        return initial < min ? min : Math.min(initial, max);
     }
 }

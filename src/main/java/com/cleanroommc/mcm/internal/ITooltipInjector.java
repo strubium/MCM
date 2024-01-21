@@ -29,11 +29,12 @@ import net.minecraft.item.ItemStack;
  * replaced with $VARNAME There is now calculation feature. Use it like this:
  * parse[PI * 2 + (-2) ^ 2]
  */
+@SuppressWarnings("unused")
 public interface ITooltipInjector
 {
     /**
      * Injects variables to vars map. Use vars.put("test", "This is a test
      * variable!"); Will replace "$test" with "This is a test variable!"
      */
-    public void injectVariables(ItemStack stack, Map<String, String> vars);
+     void injectVariables(ItemStack stack, Map<String, String> vars);
 }

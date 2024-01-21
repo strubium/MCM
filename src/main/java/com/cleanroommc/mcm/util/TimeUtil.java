@@ -18,6 +18,7 @@
 
 package com.cleanroommc.mcm.util;
 
+@SuppressWarnings("unused")
 public final class TimeUtil {
     /*
      * TODO get the servers tps, instead of using a static variable
@@ -34,7 +35,7 @@ public final class TimeUtil {
     }
 
     public static int secondsFromTicks(int ticks) {
-        return (int) (ticks / TICKS_PER_SECOND);
+        return (ticks / TICKS_PER_SECOND);
     }
 
     public static int ticksFromMinutes(float minutes) {
@@ -42,7 +43,7 @@ public final class TimeUtil {
     }
 
     public static int minutesFromTicks(int ticks) {
-        return (int) (ticks / (60 * 60));
+        return (ticks / (60 * 60));
     }
 
     public static int ticksFromHours(float hours) {
