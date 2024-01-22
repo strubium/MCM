@@ -6,9 +6,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-import static com.cleanroommc.mcm.ModRef.MODID;
-import static com.cleanroommc.mcm.ModRef.NAME;
-import static com.cleanroommc.mcm.ModRef.VERSION;
+import static com.cleanroommc.mcm.dict.FluidDictionary.initVanillaFluids;
+import static com.cleanroommc.mcm.util.OreDictUtil.initVanillaOreDict;
 
 @Mod(modid = ModRef.MODID, name = ModRef.NAME, version = ModRef.VERSION)
 public class MCM {
@@ -19,6 +18,8 @@ public class MCM {
 
     @EventHandler
     public void init(FMLInitializationEvent initializationEvent) {
+        initVanillaOreDict();
+        initVanillaFluids();
     }
 
     @EventHandler

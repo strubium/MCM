@@ -14,6 +14,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
+@SuppressWarnings("unused")
 public class TooltipUtil
 {
     private static final ThreadLocal<Map<String, String>> results = ThreadLocal.withInitial(HashMap::new);
@@ -59,7 +60,7 @@ public class TooltipUtil
                         while(toEat.contains("parse[") && toEat.substring(toEat.indexOf("parse[")).contains("]"))
                         {
                             int parseStart = toEat.indexOf("parse[");
-                            sput.append(toEat.substring(0, parseStart));
+                            sput.append(toEat, 0, parseStart);
                             String fullExpr = toEat.substring(parseStart);
                             fullExpr = fullExpr.substring(0, fullExpr.indexOf("]") + 1);
                             String expr = fullExpr.substring(6, fullExpr.length() - 1);

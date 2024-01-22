@@ -31,6 +31,7 @@ import net.minecraft.world.WorldProvider;
  * A type can have subtypes and supertypes.
  * A dimension matches a type when it is associated with either the type or any of its sub-types.
  */
+@SuppressWarnings("unused")
 public class DimensionDictionary
 {
     /**
@@ -292,7 +293,7 @@ public class DimensionDictionary
     public static Set<String> getSupertypes(String type)
     {
         Type t = types.get(type);
-        return t == null ? Collections.<String>emptySet() : Collections.unmodifiableSet(t.supertypes);
+        return t == null ? Collections.emptySet() : Collections.unmodifiableSet(t.supertypes);
     }
 
     /**
@@ -304,7 +305,7 @@ public class DimensionDictionary
     public static Set<String> getSubtypes(String type)
     {
         Type t = types.get(type);
-        return t == null ? Collections.<String>emptySet() : Collections.unmodifiableSet(t.subtypes);
+        return t == null ? Collections.emptySet() : Collections.unmodifiableSet(t.subtypes);
     }
 
     /**
@@ -322,7 +323,7 @@ public class DimensionDictionary
         return types.get(type);
     }
 
-    public static interface Handler
+    public interface Handler
     {
         /**
          * Note: Do not invoke this directly. Use {@link DimensionDictionary}'s methods instead.

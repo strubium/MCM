@@ -18,6 +18,7 @@
 
 package com.cleanroommc.mcm.util;
 
+@SuppressWarnings("unused")
 public class Chars
 {
     /**

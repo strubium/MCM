@@ -7,16 +7,17 @@
  */
 package com.cleanroommc.mcm.util;
 
-import java.awt.Color;
-import java.math.*;
-import java.util.Random;
-
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+
+import java.awt.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Random;
 
 @SuppressWarnings("unused")
 public final class MathUtil {
@@ -190,5 +191,16 @@ public final class MathUtil {
     public static int adjustToRange (int initial, int min, int max) {
 
         return initial < min ? min : Math.min(initial, max);
+    }
+
+    /**
+     * Simple util to convert bytes to megabytes.
+     *
+     * @param bytes The amount of bytes.
+     * @return The amount of megabytes.
+     */
+    public static long bytesToMb (long bytes) {
+
+        return bytes / 1024L / 1024L;
     }
 }

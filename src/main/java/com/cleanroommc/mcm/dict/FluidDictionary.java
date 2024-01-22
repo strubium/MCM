@@ -44,22 +44,18 @@ public class FluidDictionary
 	private static final Map<String, List<String>> idToFn = Maps.newHashMapWithExpectedSize(96);
 	private static final Map<String, String> fnToId = Maps.newHashMapWithExpectedSize(96);
 	private static final Map<String, NonNullList<FluidStack>> fnToStack = Maps.newHashMapWithExpectedSize(96);
-	
-	static
-	{
-		initVanillaEntries();
-	}
-	
-	private static void initVanillaEntries()
+
+	public static void initVanillaFluids()
 	{
 		if(!hasInit)
 		{
 			registerFluid(FluidRegistry.WATER, "water");
 			registerFluid(FluidRegistry.LAVA, "lava");
 			hasInit = true;
+			LOG.info("initVanillaFluids loaded");
 		}
 	}
-	
+
 	public static void registerFluid(Fluid fluid, String fname)
 	{
 		registerFluid(fluid, fname, null);

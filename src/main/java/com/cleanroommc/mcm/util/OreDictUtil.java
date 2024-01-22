@@ -33,6 +33,16 @@ import static com.cleanroommc.mcm.ModRef.LOG;
 @SuppressWarnings("unused")
 public final class OreDictUtil {
 
+    /**
+     * Utility classes, such as this one, are not meant to be instantiated. Java adds an
+     * implicit public constructor to every class which does not define at lease one
+     * explicitly. Hence, why this constructor was added.
+     */
+    private OreDictUtil() {
+
+        throw new IllegalAccessError("OreDictUtil is a utility class!");
+    }
+
     // Variant Arrays
     public static final String[] WOOD_TYPES = new String[] { "Oak", "Spruce", "Birch", "Jungle", "Acacia", "DarkOak" };
 
@@ -362,17 +372,7 @@ public final class OreDictUtil {
 
     public static final String PANE_GLASS_WHITE = "paneGlassWhite";
 
-    /**
-     * Utility classes, such as this one, are not meant to be instantiated. Java adds an
-     * implicit public constructor to every class which does not define at lease one
-     * explicitly. Hence, why this constructor was added.
-     */
-    private OreDictUtil() {
-
-        throw new IllegalAccessError("OreDictUtil is a utility class!");
-    }
-
-    public static void initAdditionalVanillaEntries () {
+    public static void initVanillaOreDict () {
 
         registerOre(HOPPER, Blocks.HOPPER);
         registerOre(BOOKSHELF, Blocks.BOOKSHELF);
