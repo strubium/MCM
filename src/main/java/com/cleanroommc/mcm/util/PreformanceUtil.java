@@ -37,6 +37,11 @@ public class PreformanceUtil {
     private final int fps;
 
     /**
+     * If the client is running 64bit Java.
+     */
+    private final bool is64bit;
+
+    /**
      * The amount of chunk render updates.
      */
     private final int chunkUpdates;
@@ -68,6 +73,7 @@ public class PreformanceUtil {
     public PreformanceUtil() {
 
         this.fps = Minecraft.getDebugFPS();
+        this.is64bit = Minecraft.getJava64bit();
         this.chunkUpdates = RenderChunk.renderChunksUpdated;
 
         final Runtime runtime = Runtime.getRuntime();
